@@ -1,0 +1,37 @@
+{
+  "name": "root",
+  "private": true,
+  "workspaces": [
+    "packages/modules/*/**"
+  ],
+  "devDependencies": {
+    "@aegov/design-system": "^2.1.3",
+    "@testing-library/jest-dom": "^6.4.2",
+    "@testing-library/react": "^15.0.5",
+    "@testing-library/user-event": "^14.5.2",
+    "@types/node": "^20.12.7",
+    "@vitest/coverage-v8": "^1.5.3",
+    "@vitest/ui": "^1.5.3",
+    "cross-env": "^7.0.3",
+    "jsdom": "^24.0.0",
+    "lerna": "^6.6.2",
+    "sass": "^1.76.0",
+    "vite-plugin-css-injected-by-js": "^3.5.1",
+    "vite-plugin-dts": "^3.9.0",
+    "vitest": "^1.5.3"
+  },
+  "scripts": {
+    "test-all-packages": "npx lerna run --parallel test --stream",
+    "test-all-packages-prod": "npx lerna run --parallel test-prod --stream",
+    "build-all": "npx lerna run build",
+    "build-all-prod": "npx lerna run build-prod",
+    "clean-projects": "npx lerna clean -y",
+    "clear-cache": "npx nx reset",
+    "clean-dist": "npx lerna exec -- rimraf dist",
+    "remove-node-module": "rimraf node_modules",
+    "reset-env": "npm run clean-projects && npm run clear-cache && npm run clean-dist && npm run remove-node-module",
+    "bootstrap": "npx lerna bootstrap",
+    "diff": "npx lerna diff",
+    "new-version": "npx lerna version"
+  }
+}

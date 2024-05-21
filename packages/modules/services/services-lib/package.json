@@ -1,0 +1,52 @@
+{
+  "name": "@abc/services",
+  "description": "Services lib",
+  "author": "Netways",
+  "license": "ISC",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/abc-services-lib.umd.cjs",
+  "module": "./dist/abc-services-lib.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/abc-services-lib.js",
+      "require": "./dist/abc-services-lib.umd.cjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "start": "vite --open",
+    "build": "rimraf dist && tsc && cross-env NODE_ENV=dev vite build",
+    "build-production": "rimraf dist && tsc && vite build",
+    "test": "vitest ./test/unit-test --ui",
+    "test-prod": "vitest run --reporter=default --reporter=junit --outputFile=../../reports/studio.xml",
+    "integration-test": "vitest ./test/integration-test --ui --coverage.enabled",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "build-style": "npx tailwindcss -i ./src/style.css -o ./dist/style.css"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "i18next": "^23.11.3",
+    "react-i18next": "^14.1.1",
+    "i18next-browser-languagedetector": "^7.2.1",
+    "i18next-http-backend": "^2.5.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.66",
+    "@types/react-dom": "^18.2.22",
+    "@typescript-eslint/eslint-plugin": "^7.2.0",
+    "@typescript-eslint/parser": "^7.2.0",
+    "@vitejs/plugin-react": "^4.2.1",
+    "eslint": "^8.57.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.6",
+    "typescript": "^5.2.2",
+    "vite": "^5.2.0"
+  }
+}

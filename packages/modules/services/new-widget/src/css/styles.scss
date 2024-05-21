@@ -1,0 +1,29 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	border-radius: 15px;
+	padding: 25px;
+	align-items: flex-start;
+}
+
+.content-text {
+	margin: 0 200px;
+}
+
+.content-image {
+	max-width: 300px;
+	margin: auto;
+}
+
+.infos span {
+	color: #6b6c7e;
+	margin: 0 20px;
+}
+
+.infos span:first-child {
+	margin-left: 0;
+}
+
+.infos span:last-child {
+	margin-right: 0;
+}
